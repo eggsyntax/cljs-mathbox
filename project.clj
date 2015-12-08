@@ -1,6 +1,7 @@
-(defproject cljs-mathbox "0.1.0-SNAPSHOT"
-  :description "FIXME: write this!"
-  :url "http://example.com/FIXME"
+(defproject cljs-mathbox "0.0.1-SNAPSHOT"
+  :description "ClojureScript wrapper for the MathBox JS library"
+  :url "https://github.com/eggsyntax/cljs-mathbox"
+  :license "Eclipse Public License"
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [cljsjs/mathbox "0.0.1-0"]
                  [org.clojure/core.async "0.2.374"]
