@@ -21,6 +21,8 @@ You can see example usage of cljs-mathbox at the accompanying [cljs-mathbox-exam
 
 Note that you'll need at least one WebGL shader, and this repo [includes one](https://github.com/eggsyntax/cljs-mathbox/blob/master/shaders/snippets.glsl.html).
 
+Warning: when you load a cljs-mathbox visualization, you'll see a string of errors like "WebGL: INVALID_OPERATION: getUniformLocation: program not linked". This is a MathBox issue (related to the Three.js dependency), so cljs-mathbox is stuck with it.
+
 ## Setup
 
 Build your project once in dev mode with the following script and then open `index.html` in your browser.

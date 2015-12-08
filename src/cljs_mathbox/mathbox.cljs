@@ -15,17 +15,17 @@
 
 (defn create-mathbox
   "Create and return a mathbox instance. mathBox must be defined as a top-level
-  JS variable (which just means loading the library in your HTML file)."
-  [shader-file opts-map]
+  JS variable (which just means loading the library in your HTML file). The instance will be attached to a div you name (or 'mathboxdiv' if divname is nil)"
+  [shader-file opts-map & divname]
   (let [defaults {:cameraControls true
                   :cursor true
                   :stats false
                   :elementResize true
                   ;; Just in case (eg if there's no data)
                   :expression (constantly 0)}
+        mb-div (or (first divname) "mathboxdiv")
 
-        ;; TODO for god's sake, don't hardcode the div name...
-        containing-element (.getElementById js/document "mathboxdiv")
+        containing-element (.getElementById js/document mb-div)
 
         ;; Create mathbox attached to a containing element, if one is provided,
         ;; otherwise attach it to the page (by omitting the containing-element
