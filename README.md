@@ -1,17 +1,25 @@
 TODO: mention that base shader is included
 TODO: document: must have local shaders file. Can get a default shaders file,
       snippets.glsl.html, from cljs-mathbox on github (or from cljs-mathbox-example?)
-TODO: mention that
+TODO: mention WebGL warnings
 
 
 
 # cljs-mathbox
 
-TODO: Write a one-line description of your library/project.
+[cljs-mathbox](https://github.com/eggsyntax/cljs-mathbox) is a ClojureScript wrapper for the [MathBox 1](https://github.com/unconed/MathBox.js/tree/legacy) JavaScript mathematical visualization library.
 
 ## Overview
 
-TODO: Write a paragraph about the library/project and highlight its goals.
+[MathBox](https://github.com/unconed/MathBox.js/tree/legacy) is an extremely powerful library for mathematical (and data) visualization in the browser, specializing in interactive, three-dimensional, animated visualizations, created by [Steven Wittens](http://acko.net/about/). It's built on the [Three.js](https://github.com/mrdoob/three.js/) library, which is built on [WebGL](https://en.wikipedia.org/wiki/WebGL). You can see a number of impressive MathBox visualizations at the author's website, [acko.net](http://acko.net/).
+
+It should be noted that this library is based on MathBox version 1. MathBox version 2, which will be a very different, more powerful library, and is [nearing completion](http://acko.net/blog/mathbox2/) as of this writing (12/2015). Nevertheless, MathBox 1 is quite powerful in its own right.
+
+For MathBox 1 documentation, see [its repo](https://github.com/unconed/MathBox.js/tree/legacy) (be aware that Mathbox 2 is [hosted elsewhere](https://gitgud.io/unconed/mathbox)). cljs-mathbox is a fairly thin wrapper over the original. It exposes the primitives (platonic, curve, bezier, surface, bezier-surface, vector, grid, axis, viewport, camera), and the major functions (animate, clone, remove, get-props, set-props).
+
+You can see example usage of cljs-mathbox at the accompanying [cljs-mathbox-example](https://github.com/eggsyntax/cljs-mathbox-example). In short: include and require the library, create a mathbox instance, and call functions on it.
+
+Note that you'll need at least one WebGL shader, and this repo [includes one](https://github.com/eggsyntax/cljs-mathbox/blob/master/shaders/snippets.glsl.html).
 
 ## Setup
 
@@ -61,3 +69,5 @@ Build a single release artifact with the following script and then open `index_r
 Copyright © 2015 Egg Davis
 
 Distributed under the Eclipse Public License either version 1.0 or (at your option) any later version.
+
+MathBox is copyright 2012 by Steven Wittens, and distributed under the MIT license.
