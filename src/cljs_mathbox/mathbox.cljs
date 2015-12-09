@@ -5,7 +5,7 @@
 ;; Note that requiring cljsjs.mathbox puts a MathBox instance into the top-level
 ;; namespace, accessible as js/mathBox, as well as making ThreeBox available as
 ;; js/ThreeBox
-;;TODO handle the hash-sign id on this side?
+;;TODO Consider handling the hash-sign id on this side
 
 
 (ns cljs-mathbox.mathbox
@@ -31,10 +31,6 @@
         ;; otherwise attach it to the page (by omitting the containing-element
         ;; argument, see
         ;; https://github.com/unconed/MathBox.js/blob/legacy/README.md
-        ;; (and search for "Create a MathBox as follows")
-        ;; TODO could enslicken this some with something like:
-        ;; (apply js/mathBox. (remove nil? [containing-element
-        ;;                                  (clj->js (into defaults opts-map))])
         mb (if containing-element
              (.start (js/mathBox. containing-element
                                   (clj->js (into defaults opts-map))))

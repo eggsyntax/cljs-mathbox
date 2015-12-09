@@ -1,4 +1,4 @@
-(defproject cljs-mathbox "1.0.0"
+(defproject cljs-mathbox "1.0.1-SNAPSHOT"
   :description "ClojureScript wrapper for the MathBox JS library"
   :url "https://github.com/eggsyntax/cljs-mathbox"
   :license "Eclipse Public License"

@@ -31,7 +31,8 @@ Simple example:
             [cljs.core.async :refer [<! timeout]])
   (:require-macros [cljs.core.async.macros :refer [go]]))
 
-;; Create mathbox. Name of div should match a div in your HTML
+;; Create mathbox. Name of div should match a div in your HTML (which must be
+;; non-empty or the browser will optimize it out; just a &nbsp; will do fine.
 (let [m (mb/create-mathbox "shaders/snippets.glsl.html" {} "mathboxdiv")]
   ;; We need a moment for the creation to finish
   (go (<! (timeout 200))
