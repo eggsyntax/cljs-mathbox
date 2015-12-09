@@ -20,7 +20,7 @@ NOTE: when you load a cljs-mathbox visualization, you'll see a string of errors 
 
 ## Library usage
 
-Add the following dependency: `[cljs-mathbox "1.0.0"]`
+Add the following dependency: `[cljs-mathbox "1.0.1"]`
 and then you can `(:require [cljs-mathbox.mathbox])`.
 
 Simple example:
