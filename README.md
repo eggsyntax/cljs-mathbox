@@ -26,20 +26,29 @@ and then you can `(:require [cljs-mathbox.mathbox])`.
 Simple example:
 
 ```clojurescript
-(ns cljs-mathbox-example.core
+(ns myproject
   (:require [cljs-mathbox.mathbox :as mb]
             [cljs.core.async :refer [<! timeout]])
   (:require-macros [cljs.core.async.macros :refer [go]]))
+
+;; Create mathbox. Name of div should match a div in your HTML
 (let [m (mb/create-mathbox "shaders/snippets.glsl.html" {} "mathboxdiv")]
+  ;; We need a moment for the creation to finish
   (go (<! (timeout 200))
       (-> m
+          ;; Place the camera where you like
           (mb/camera {:orbit 7.5})
+          ;; Create a cube
           (mb/platonic {:type :cube
                         :id "acube"})
+          ;; Rotate it over a 6-second period
           (mb/animate "#acube"
                       {:mathRotation [0 3 0]}
                       {:duration 6000}))))
 ```
+
+For a larger example, see the [example repo](https://github.com/eggsyntax/cljs-mathbox-example)
+
 ## Building this project:
 
 NOTE: typically there's no need to build this project yourself unless you're intending to contribute to cljs-mathbox.
