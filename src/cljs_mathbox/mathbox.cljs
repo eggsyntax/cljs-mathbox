@@ -1,6 +1,6 @@
 ;; Define cljs wrappers for MathBox js functions
 ;; See https://github.com/unconed/MathBox.js/tree/legacy for MathBox documentation
-;; See mathboxexample.cljs for usage examples
+;; Find usage examples at (https://github.com/eggsyntax/cljs-mathbox-example)
 
 ;; Note that requiring cljsjs.mathbox puts a MathBox instance into the top-level
 ;; namespace, accessible as js/mathBox, as well as making ThreeBox available as
@@ -40,14 +40,9 @@
                                   (clj->js (into defaults opts-map))))
              (.start (js/mathBox. (clj->js (into defaults opts-map)))))
 
-
         ;; Preload shader file
         shader-filename (clj->js [shader-file])
-
-        ;; .preload wants a callback -- MathBox examples pass it the boilerplate
-        ;; functions that do stuff with MathBox (see the "Setup & Usage" section
-        ;; of https://github.com/unconed/MathBox.js/blob/master/README.md).
-        ;; Passing it a noop function seems to work just fine, though.
+        ;; .preload wants a callback; for our purposes a noop will do fine
         _ (.preload js/ThreeBox shader-filename #())]
     mb))
 
