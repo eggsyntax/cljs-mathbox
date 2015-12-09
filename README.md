@@ -20,13 +20,13 @@ NOTE: when you load a cljs-mathbox visualization, you'll see a string of errors 
 
 ## Library usage
 
-Add the following dependency: `[cljs-mathbox "0.1.2-SNAPSHOT"]`
+Add the following dependency: `[cljs-mathbox "1.0.0"]`
 and then you can `(:require [cljs-mathbox.mathbox])`.
 
 Simple example:
 
 ```clojurescript
-(ns myproject
+(ns MYPROJECT
   (:require [cljs-mathbox.mathbox :as mb]
             [cljs.core.async :refer [<! timeout]])
   (:require-macros [cljs.core.async.macros :refer [go]]))
